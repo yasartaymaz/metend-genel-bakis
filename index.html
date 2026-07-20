@@ -1,46 +1,28 @@
 <title>Metend — Ürün Genel Bakış</title>
 <style>
   :root {
-    --bg: #f5f8fc;
-    --surface: #ffffff;
-    --surface-2: #f0f4fa;
-    --ink: #0f1b2d;
-    --muted: #55647a;
-    --faint: #8494a9;
-    --border: #e1e8f2;
-    --border-strong: #cdd8e8;
-    --accent: #2563eb;
-    --accent-ink: #1b4bc4;
-    --accent-soft: #e9f0ff;
-    --ok: #10894b;
-    --ok-soft: #e2f4ea;
-    --now: #b46a00;
-    --now-soft: #fbeed6;
-    --plan: #6d5ae0;
-    --plan-soft: #ece8fb;
+    --bg: #f5f8fc; --surface: #ffffff; --surface-2: #f0f4fa;
+    --ink: #0f1b2d; --muted: #55647a; --faint: #8494a9;
+    --border: #e1e8f2; --border-strong: #cdd8e8;
+    --accent: #2563eb; --accent-ink: #1b4bc4; --accent-soft: #e9f0ff;
+    --ok: #10894b; --ok-soft: #e2f4ea;
+    --now: #b46a00; --now-soft: #fbeed6;
+    --plan: #6d5ae0; --plan-soft: #ece8fb;
+    --native: #0d8f8f; --native-soft: #d9f2f0;
     --shadow: 0 1px 2px rgba(15,27,45,.04), 0 12px 30px -18px rgba(15,27,45,.22);
     --sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     --mono: ui-monospace, "SF Mono", "Cascadia Mono", "JetBrains Mono", Menlo, Consolas, monospace;
   }
   @media (prefers-color-scheme: dark) {
     :root {
-      --bg: #0a1120;
-      --surface: #111c30;
-      --surface-2: #16233a;
-      --ink: #e9eef7;
-      --muted: #9fadc2;
-      --faint: #6f7f96;
-      --border: #22314c;
-      --border-strong: #31456a;
-      --accent: #5b8bff;
-      --accent-ink: #8fb2ff;
-      --accent-soft: #17233f;
-      --ok: #43c98a;
-      --ok-soft: #123528;
-      --now: #e5a13d;
-      --now-soft: #372a13;
-      --plan: #a794ff;
-      --plan-soft: #23204a;
+      --bg: #0a1120; --surface: #111c30; --surface-2: #16233a;
+      --ink: #e9eef7; --muted: #9fadc2; --faint: #6f7f96;
+      --border: #22314c; --border-strong: #31456a;
+      --accent: #5b8bff; --accent-ink: #8fb2ff; --accent-soft: #17233f;
+      --ok: #43c98a; --ok-soft: #123528;
+      --now: #e5a13d; --now-soft: #372a13;
+      --plan: #a794ff; --plan-soft: #23204a;
+      --native: #3ecfce; --native-soft: #0f3231;
       --shadow: 0 1px 2px rgba(0,0,0,.3), 0 16px 40px -22px rgba(0,0,0,.7);
     }
   }
@@ -48,103 +30,84 @@
     --bg: #f5f8fc; --surface: #ffffff; --surface-2: #f0f4fa; --ink: #0f1b2d; --muted: #55647a; --faint: #8494a9;
     --border: #e1e8f2; --border-strong: #cdd8e8; --accent: #2563eb; --accent-ink: #1b4bc4; --accent-soft: #e9f0ff;
     --ok: #10894b; --ok-soft: #e2f4ea; --now: #b46a00; --now-soft: #fbeed6; --plan: #6d5ae0; --plan-soft: #ece8fb;
+    --native: #0d8f8f; --native-soft: #d9f2f0;
     --shadow: 0 1px 2px rgba(15,27,45,.04), 0 12px 30px -18px rgba(15,27,45,.22);
   }
   :root[data-theme="dark"] {
     --bg: #0a1120; --surface: #111c30; --surface-2: #16233a; --ink: #e9eef7; --muted: #9fadc2; --faint: #6f7f96;
     --border: #22314c; --border-strong: #31456a; --accent: #5b8bff; --accent-ink: #8fb2ff; --accent-soft: #17233f;
     --ok: #43c98a; --ok-soft: #123528; --now: #e5a13d; --now-soft: #372a13; --plan: #a794ff; --plan-soft: #23204a;
+    --native: #3ecfce; --native-soft: #0f3231;
     --shadow: 0 1px 2px rgba(0,0,0,.3), 0 16px 40px -22px rgba(0,0,0,.7);
   }
 
   * { box-sizing: border-box; }
-  body {
-    margin: 0; background: var(--bg); color: var(--ink);
-    font-family: var(--sans); line-height: 1.55;
-    -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
-  }
-  .wrap { max-width: 1060px; margin: 0 auto; padding: 0 24px 72px; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--sans); line-height: 1.55; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px 76px; }
 
-  /* ---- header ---- */
   header { padding: 56px 0 8px; }
-  .brand { display: flex; align-items: center; gap: 12px; margin-bottom: 26px; }
-  .mark {
-    width: 40px; height: 40px; border-radius: 11px; flex: none;
-    background: linear-gradient(150deg, var(--accent), var(--accent-ink));
-    display: grid; place-items: center; color: #fff; box-shadow: var(--shadow);
-  }
+  .brand { display: flex; align-items: center; gap: 12px; margin-bottom: 28px; }
+  .mark { width: 42px; height: 42px; border-radius: 12px; flex: none; background: linear-gradient(150deg, var(--accent), var(--accent-ink)); display: grid; place-items: center; color: #fff; box-shadow: var(--shadow); }
   .brand b { font-size: 20px; font-weight: 700; letter-spacing: -.02em; }
   .brand span { color: var(--faint); font-size: 13px; }
-  .eyebrow {
-    font-size: 12px; font-weight: 700; letter-spacing: .13em; text-transform: uppercase;
-    color: var(--accent-ink);
-  }
-  h1 {
-    font-size: clamp(30px, 5vw, 46px); line-height: 1.06; letter-spacing: -.03em;
-    font-weight: 780; margin: 12px 0 0; text-wrap: balance; max-width: 18ch;
-  }
-  .lede { font-size: 17.5px; color: var(--muted); max-width: 60ch; margin: 18px 0 0; }
+  .eyebrow { font-size: 12px; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; color: var(--accent-ink); }
+  h1 { font-size: clamp(30px, 5vw, 46px); line-height: 1.06; letter-spacing: -.03em; font-weight: 780; margin: 12px 0 0; text-wrap: balance; max-width: 18ch; }
+  .lede { font-size: 17.5px; color: var(--muted); max-width: 62ch; margin: 18px 0 0; }
 
-  /* ---- metric strip ---- */
-  .metrics {
-    display: grid; grid-template-columns: repeat(5, 1fr); gap: 1px;
-    background: var(--border); border: 1px solid var(--border); border-radius: 14px;
-    overflow: hidden; margin: 34px 0 8px;
-  }
+  .metrics { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; margin: 34px 0 8px; }
   .metric { background: var(--surface); padding: 16px 18px; }
-  .metric .n { font-size: 22px; font-weight: 750; letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
+  .metric .n { font-size: 21px; font-weight: 750; letter-spacing: -.02em; }
   .metric .l { font-size: 12.5px; color: var(--faint); margin-top: 2px; }
 
-  /* ---- legend ---- */
-  .legend { display: flex; flex-wrap: wrap; gap: 16px; margin: 40px 0 22px; align-items: center; }
+  .legend { display: flex; flex-wrap: wrap; gap: 14px; margin: 38px 0 24px; align-items: center; }
   .legend .t { font-size: 13px; color: var(--faint); }
-  .chip {
-    display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 650;
-    padding: 3px 9px 3px 8px; border-radius: 999px; white-space: nowrap;
-  }
+  .chip { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 650; padding: 3px 9px 3px 8px; border-radius: 999px; white-space: nowrap; }
   .chip .dot { width: 7px; height: 7px; border-radius: 999px; }
-  .chip.ok { background: var(--ok-soft); color: var(--ok); }   .chip.ok .dot { background: var(--ok); }
+  .chip.ok { background: var(--ok-soft); color: var(--ok); } .chip.ok .dot { background: var(--ok); }
   .chip.now { background: var(--now-soft); color: var(--now); } .chip.now .dot { background: var(--now); }
   .chip.plan { background: var(--plan-soft); color: var(--plan); } .chip.plan .dot { background: var(--plan); }
+  .chip.native { background: var(--native-soft); color: var(--native); } .chip.native .dot { background: var(--native); }
 
-  /* ---- module grid ---- */
-  .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
-  .card {
-    background: var(--surface); border: 1px solid var(--border); border-radius: 16px;
-    padding: 22px 22px 20px; box-shadow: var(--shadow); display: flex; flex-direction: column;
-  }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 18px; }
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 22px 22px 20px; box-shadow: var(--shadow); display: flex; flex-direction: column; }
   .card > .top { display: flex; align-items: flex-start; gap: 13px; }
-  .ico {
-    width: 38px; height: 38px; border-radius: 10px; flex: none;
-    background: var(--accent-soft); color: var(--accent-ink); display: grid; place-items: center;
-  }
+  .ico { width: 38px; height: 38px; border-radius: 10px; flex: none; background: var(--accent-soft); color: var(--accent-ink); display: grid; place-items: center; }
   .ico svg { width: 20px; height: 20px; }
   .card h3 { margin: 2px 0 0; font-size: 16.5px; font-weight: 700; letter-spacing: -.01em; }
   .card .desc { margin: 3px 0 0; font-size: 13.5px; color: var(--muted); }
-  ul.feats { list-style: none; margin: 16px 0 0; padding: 14px 0 0; border-top: 1px solid var(--border); display: flex; flex-direction: column; gap: 8px; }
-  ul.feats li { display: flex; gap: 9px; font-size: 13.7px; color: var(--ink); align-items: baseline; }
-  ul.feats li .tick { color: var(--accent); flex: none; font-size: 12px; line-height: 1.5; }
-  ul.feats li em { color: var(--now); font-style: normal; font-weight: 650; font-size: 11px; letter-spacing: .02em; }
+  ul.feats { list-style: none; margin: 15px 0 0; padding: 14px 0 0; border-top: 1px solid var(--border); display: flex; flex-direction: column; gap: 7px; }
+  ul.feats li { display: flex; gap: 9px; font-size: 13.4px; color: var(--ink); align-items: baseline; }
+  ul.feats li .tick { color: var(--accent); flex: none; font-size: 11px; line-height: 1.6; }
+  ul.feats li em { color: var(--now); font-style: normal; font-weight: 650; font-size: 10.5px; letter-spacing: .02em; text-transform: uppercase; }
 
-  /* ---- section heading ---- */
-  .sec-h { display: flex; align-items: baseline; gap: 12px; margin: 46px 0 20px; }
-  .sec-h h2 { font-size: 14px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--faint); margin: 0; }
+  .sec-h { display: flex; align-items: baseline; gap: 12px; margin: 48px 0 20px; }
+  .sec-h h2 { font-size: 14px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--faint); margin: 0; white-space: nowrap; }
   .sec-h .rule { flex: 1; height: 1px; background: var(--border); }
+  .sec-note { font-size: 14px; color: var(--muted); margin: -6px 0 22px; max-width: 66ch; }
 
-  /* ---- roadmap ---- */
+  /* mobil vurgu bandı */
+  .mobile-band { background: linear-gradient(135deg, var(--native-soft), var(--surface)); border: 1px solid var(--border); border-radius: 18px; padding: 26px; display: grid; grid-template-columns: 1.1fr 1fr; gap: 30px; box-shadow: var(--shadow); }
+  .mobile-band h3 { margin: 6px 0 0; font-size: 20px; letter-spacing: -.02em; }
+  .mobile-band p { color: var(--muted); font-size: 14px; margin: 8px 0 0; }
+  .mobile-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 22px; align-content: start; }
+  .mobile-cols .g { font-size: 11.5px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--native); margin: 4px 0 2px; }
+  ul.mini { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+  ul.mini li { font-size: 13.2px; display: flex; gap: 8px; align-items: baseline; }
+  ul.mini li .tick { color: var(--native); font-size: 11px; flex: none; }
+
   .road { display: flex; flex-direction: column; gap: 2px; border: 1px solid var(--border); border-radius: 16px; overflow: hidden; background: var(--border); }
-  .road .row { background: var(--surface); display: grid; grid-template-columns: 150px 1fr; gap: 18px; padding: 17px 22px; align-items: start; }
-  .road .row .when { display: flex; }
+  .road .row { background: var(--surface); display: grid; grid-template-columns: 160px 1fr; gap: 18px; padding: 17px 22px; align-items: start; }
   .road .row .what b { font-size: 14.5px; font-weight: 680; }
   .road .row .what p { margin: 3px 0 0; font-size: 13.3px; color: var(--muted); }
 
   footer { margin-top: 46px; padding-top: 22px; border-top: 1px solid var(--border); color: var(--faint); font-size: 12.5px; display: flex; flex-wrap: wrap; gap: 6px 18px; justify-content: space-between; }
   .kb { font-family: var(--mono); font-size: 11.5px; color: var(--muted); background: var(--surface-2); border: 1px solid var(--border); border-radius: 6px; padding: 1px 6px; }
 
-  @media (max-width: 720px) {
+  @media (max-width: 760px) {
     .metrics { grid-template-columns: repeat(2, 1fr); }
     .metrics .metric:last-child { grid-column: 1 / -1; }
     .grid { grid-template-columns: 1fr; }
+    .mobile-band { grid-template-columns: 1fr; gap: 20px; }
     .road .row { grid-template-columns: 1fr; gap: 8px; }
   }
 </style>
@@ -152,29 +115,24 @@
 <div class="wrap">
   <header>
     <div class="brand">
-      <div class="mark" aria-hidden="true">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V8l9-5 9 5v13"/><path d="M9 21v-6h6v6"/></svg>
-      </div>
-      <div>
-        <b>Metend</b><br>
-        <span>B2B Pazar Yeri &amp; İş Ağı</span>
-      </div>
+      <div class="mark" aria-hidden="true"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V8l9-5 9 5v13"/><path d="M9 21v-6h6v6"/></svg></div>
+      <div><b>Metend</b><br><span>B2B Pazar Yeri &amp; İş Ağı</span></div>
     </div>
 
     <div class="eyebrow">Durum Paylaşımı</div>
     <h1>Metend'de bugün neredeyiz?</h1>
     <p class="lede">
       Birlikte kurduğumuz platformun geldiği noktayı özetledim: bugün <strong>hazır ve canlı</strong> olan
-      modüller, son dönemde eklediklerimiz ve sırada birlikte karar vereceğimiz adımlar. Aşağıdaki her şey
-      şu an beta ortamında çalışıyor — üreticiden tedarikçiye, teklif ve siparişten mesajlaşmaya kadar
-      tüm ticari akış tek platformda.
+      modüller, son dönemde eklediklerimiz ve sırada birlikte karar vereceğimiz adımlar. Üreticiden tedarikçiye,
+      teklif ve siparişten mesajlaşmaya kadar tüm ticari akış tek platformda — hem web'de hem
+      <strong>iOS/Android uygulamasında</strong>. Aşağıdaki her şey şu an beta ortamında çalışıyor.
     </p>
 
     <div class="metrics">
-      <div class="metric"><div class="n">9</div><div class="l">ana modül</div></div>
-      <div class="metric"><div class="n">45+</div><div class="l">ekran</div></div>
+      <div class="metric"><div class="n">12</div><div class="l">ana modül</div></div>
+      <div class="metric"><div class="n">Web·iOS·Android</div><div class="l">3 istemci</div></div>
+      <div class="metric"><div class="n">75+</div><div class="l">ekran</div></div>
       <div class="metric"><div class="n">TR&nbsp;+&nbsp;EN</div><div class="l">iki dil</div></div>
-      <div class="metric"><div class="n">Web&nbsp;+&nbsp;Mobil</div><div class="l">ayrı optimize</div></div>
       <div class="metric"><div class="n">Beta</div><div class="l">canlı yayında</div></div>
     </div>
 
@@ -183,136 +141,260 @@
       <span class="chip ok"><span class="dot"></span> Hazır &amp; canlı</span>
       <span class="chip now"><span class="dot"></span> Yeni / geliştiriliyor</span>
       <span class="chip plan"><span class="dot"></span> Planlanan</span>
+      <span class="chip native"><span class="dot"></span> Mobile özel</span>
     </div>
   </header>
 
-  <div class="sec-h"><h2>Bugün platformda neler var</h2><div class="rule"></div></div>
+  <div class="sec-h"><h2>Ticaret akışı — çekirdek modüller</h2><div class="rule"></div></div>
+  <p class="sec-note">Alıcıyla satıcıyı buluşturan ve alışverişi baştan sona yürüten modüller. Hepsi hem web'de hem mobilde çalışıyor.</p>
 
   <div class="grid">
 
-    <!-- Keşif -->
     <div class="card">
       <div class="top">
         <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></div>
-        <div><h3>Keşif &amp; İş Ağı</h3><p class="desc">Doğru firmayı, ürünü ya da kişiyi bulmanın en hızlı yolu.</p></div>
+        <div><h3>Keşif &amp; Arama</h3><p class="desc">Doğru firmayı, ürünü ya da kişiyi bulmanın en hızlı yolu.</p></div>
       </div>
       <ul class="feats">
-        <li><span class="tick">✓</span> Firma, ilan ve kişi araması — sekmeli, filtreli sonuçlar</li>
-        <li><span class="tick">✓</span> Firma ve kişi profilleri (galeri, sektör, referanslar)</li>
-        <li><span class="tick">✓</span> Takip etme &amp; iş ağı bağlantıları</li>
-        <li><span class="tick">✓</span> Herkese açık vitrin — üye olmadan gezilebilir</li>
+        <li><span class="tick">●</span> Firma, ilan ve kişi araması — tek kutudan</li>
+        <li><span class="tick">●</span> Sekmeli sonuçlar: firmalar / ilanlar / kişiler + sayaçlar</li>
+        <li><span class="tick">●</span> Sektör, faaliyet ve tür filtreleri</li>
+        <li><span class="tick">●</span> Üye olmadan gezilebilen herkese açık vitrin</li>
+        <li><span class="tick">●</span> Öne çıkan ilanların yer aldığı ana sayfa</li>
       </ul>
     </div>
 
-    <!-- Marketplace -->
+    <div class="card">
+      <div class="top">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21a8 8 0 1 0-16 0"/><circle cx="12" cy="7" r="4"/></svg></div>
+        <div><h3>Firma &amp; Kişi Profilleri</h3><p class="desc">Herkesin kendini ve firmasını güvenle tanıttığı sayfalar.</p></div>
+      </div>
+      <ul class="feats">
+        <li><span class="tick">●</span> Kurumsal profil: logo, galeri, hakkında, iletişim</li>
+        <li><span class="tick">●</span> Sektör &amp; faaliyet alanları rozetleri</li>
+        <li><span class="tick">●</span> Firmanın yayındaki ilanları ve referansları</li>
+        <li><span class="tick">●</span> Bireysel profil: ünvan, çalıştığı yer, takipçi sayısı</li>
+        <li><span class="tick">●</span> Profilden tek tıkla "Mesaj gönder"</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="top">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <div><h3>İş Ağı &amp; İlişkiler</h3><p class="desc">Ticari ağını kur, müşteri ve tedarikçilerini bir arada tut.</p></div>
+      </div>
+      <ul class="feats">
+        <li><span class="tick">●</span> Kişileri ve firmaları takip etme</li>
+        <li><span class="tick">●</span> Kurumsal ilişkiler: müşteri, tedarikçi, referans</li>
+        <li><span class="tick">●</span> Gelen ilişki istekleri &amp; onay akışı</li>
+        <li><span class="tick">●</span> Takipçi / takip sayaçları</li>
+      </ul>
+    </div>
+
     <div class="card">
       <div class="top">
         <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h18l-1.5 10.5a2 2 0 0 1-2 1.5H6.5a2 2 0 0 1-2-1.5Z"/><path d="M8 9V6a4 4 0 0 1 8 0v3"/></svg></div>
         <div><h3>İlan Pazarı</h3><p class="desc">Alım ve satım ilanlarını yayınla, doğru tarafça keşfedil.</p></div>
       </div>
       <ul class="feats">
-        <li><span class="tick">✓</span> İlan gezme — arama, tür ve sektör filtresi</li>
-        <li><span class="tick">✓</span> İlan yayınlama, düzenleme, fotoğraf galerisi</li>
-        <li><span class="tick">✓</span> İlanlarım &amp; favoriler</li>
-        <li><span class="tick">✓</span> Sonsuz kaydırma + sayfa numaraları <em>· yeni</em></li>
+        <li><span class="tick">●</span> İlan gezme — arama, tür ve sektör filtresi</li>
+        <li><span class="tick">●</span> Sonsuz kaydırma + sayfa numaraları <em>· yeni</em></li>
+        <li><span class="tick">●</span> İlan yayınlama, düzenleme, fotoğraf galerisi</li>
+        <li><span class="tick">●</span> Görünürlük hedefleme (herkes / müşteriler / tedarikçiler)</li>
+        <li><span class="tick">●</span> İlan durumu (yayında / taslak / pasif)</li>
+        <li><span class="tick">●</span> İlanlarım &amp; favoriler</li>
       </ul>
     </div>
 
-    <!-- Teklif & Sipariş -->
+    <div class="card">
+      <div class="top">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <div><h3>Teklif &amp; Fiyat İsteği</h3><p class="desc">İlandan teklife: net ve tek adımlık ticari temas.</p></div>
+      </div>
+      <ul class="feats">
+        <li><span class="tick">●</span> İlana teklif verme</li>
+        <li><span class="tick">●</span> Satıcıdan fiyat isteği</li>
+        <li><span class="tick">●</span> Gelen &amp; gönderilen teklifler ekranı</li>
+        <li><span class="tick">●</span> Devamı gerektiğinde mesajlaşmaya bağlanır</li>
+      </ul>
+    </div>
+
     <div class="card">
       <div class="top">
         <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v5h5"/><path d="M19 8v11a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7Z"/><path d="M9 13h6M9 17h4"/></svg></div>
-        <div><h3>Teklif &amp; Sipariş</h3><p class="desc">İlk temastan siparişin tamamlanmasına kadar net bir akış.</p></div>
+        <div><h3>Sipariş Yönetimi</h3><p class="desc">Siparişin tüm yaşam döngüsü tek yerde, iki taraf için de net.</p></div>
       </div>
       <ul class="feats">
-        <li><span class="tick">✓</span> Teklif verme &amp; fiyat isteği (gelen / gönderilen)</li>
-        <li><span class="tick">✓</span> Sipariş oluşturma sihirbazı</li>
-        <li><span class="tick">✓</span> Durum akışı: onay, kısmi onay, revizyon, red, tamamlama</li>
-        <li><span class="tick">✓</span> Sipariş dışa aktarma — CSV &amp; PDF <em>· yeni</em></li>
+        <li><span class="tick">●</span> Adım adım sipariş oluşturma sihirbazı</li>
+        <li><span class="tick">●</span> Durum akışı: onay, kısmi onay, revizyon, red, tamamlama</li>
+        <li><span class="tick">●</span> Gelen (tedarikçi) &amp; verdiğim (müşteri) siparişler</li>
+        <li><span class="tick">●</span> Revizyonda kalem düzenleme</li>
+        <li><span class="tick">●</span> CSV &amp; PDF olarak dışa aktarma <em>· yeni</em></li>
       </ul>
     </div>
 
-    <!-- Katalog -->
     <div class="card">
       <div class="top">
         <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a2 2 0 0 1 2-2h8l6 6v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"/><path d="M8 8h4M8 12h8M8 16h8"/></svg></div>
-        <div><h3>Ürün Kataloğu</h3><p class="desc">Firmaların ürünlerini ve müşteriye özel fiyatlarını yönettiği alan.</p></div>
+        <div><h3>Ürün Kataloğu</h3><p class="desc">Firmaların ürünlerini ve müşteriye özel koşulları yönettiği alan.</p></div>
       </div>
       <ul class="feats">
-        <li><span class="tick">✓</span> Kategoriler &amp; ürün yönetimi</li>
-        <li><span class="tick">✓</span> Müşteriye özel ürün kodları</li>
-        <li><span class="tick">✓</span> Müşteriye özel fiyatlandırma <em>· yeni</em></li>
+        <li><span class="tick">●</span> Kategori ağacı &amp; ürün yönetimi (açıklama, KDV)</li>
+        <li><span class="tick">●</span> Müşteriye özel ürün kodları</li>
+        <li><span class="tick">●</span> Müşteriye özel fiyatlandırma <em>· yeni</em></li>
+        <li><span class="tick">●</span> Sipariş sihirbazında "size özel fiyat" rozeti</li>
       </ul>
     </div>
 
-    <!-- Mesajlaşma -->
     <div class="card">
       <div class="top">
         <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H8l-4 4V5a2 2 0 0 1 2-2h13a2 2 0 0 1 2 2Z"/></svg></div>
-        <div><h3>Mesajlaşma</h3><p class="desc">İlan ve teklif bağlamı korunan, doğrudan ticari iletişim.</p></div>
+        <div><h3>Mesajlaşma</h3><p class="desc">İlan ve teklif bağlamı korunan doğrudan ticari iletişim.</p></div>
       </div>
       <ul class="feats">
-        <li><span class="tick">✓</span> Konuşmalar, gönder / okundu, okunmamış rozeti</li>
-        <li><span class="tick">✓</span> Profil ve ilandan tek tıkla mesaj başlatma</li>
-        <li><span class="tick">✓</span> Uygunsuz içerik şikayeti &amp; moderasyon</li>
+        <li><span class="tick">●</span> Konuşmalar, mesaj gönder / okundu bilgisi</li>
+        <li><span class="tick">●</span> Okunmamış mesaj rozeti</li>
+        <li><span class="tick">●</span> Profilden &amp; ilandan konuşma başlatma</li>
+        <li><span class="tick">●</span> Uygunsuz içerik şikayeti &amp; moderasyon</li>
       </ul>
     </div>
 
-    <!-- Kurumsal -->
+  </div>
+
+  <div class="sec-h"><h2>Hesap, kurumsal yönetim &amp; yönetici araçları</h2><div class="rule"></div></div>
+
+  <div class="grid">
+
     <div class="card">
       <div class="top">
         <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V7l6-3v17"/><path d="M9 21V4l8 3v14"/><path d="M17 21V9l4 2v10"/><path d="M2 21h20"/></svg></div>
         <div><h3>Kurumsal Hesaplar</h3><p class="desc">Bir kullanıcı, birden fazla firmayı adına temsil edip yönetebilir.</p></div>
       </div>
       <ul class="feats">
-        <li><span class="tick">✓</span> Kurumsal başvuru &amp; onay süreci</li>
-        <li><span class="tick">✓</span> İşletme ayarları: marka, faaliyet alanları, ekip</li>
-        <li><span class="tick">✓</span> İş ilişkileri: müşteri, tedarikçi, referans</li>
-        <li><span class="tick">✓</span> Aktif firma bağlamı — "kurum adına" işlem yapma</li>
+        <li><span class="tick">●</span> Kurumsal başvuru, belge yükleme &amp; onay süreci</li>
+        <li><span class="tick">●</span> Birden fazla işletmeyi tek hesaptan yönetme</li>
+        <li><span class="tick">●</span> Ayarlar: marka, faaliyet, ekip, konum (il/ilçe/mahalle)</li>
+        <li><span class="tick">●</span> Ekip daveti, üye istekleri, sahiplik devri</li>
+        <li><span class="tick">●</span> "Kurum adına" işlem yapma (aktif firma bağlamı)</li>
       </ul>
     </div>
 
-    <!-- Hesap -->
     <div class="card">
       <div class="top">
-        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21a8 8 0 1 0-16 0"/><circle cx="12" cy="7" r="4"/></svg></div>
-        <div><h3>Hesap &amp; Giriş</h3><p class="desc">Şifre yok — güvenli ve hızlı e-posta ile giriş.</p></div>
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+        <div><h3>Hesap, Giriş &amp; Güvenlik</h3><p class="desc">Şifre yok — güvenli, hızlı, zahmetsiz erişim.</p></div>
       </div>
       <ul class="feats">
-        <li><span class="tick">✓</span> E-posta doğrulama koduyla şifresiz giriş / kayıt</li>
-        <li><span class="tick">✓</span> Davet bağlantılarıyla üye getirme</li>
-        <li><span class="tick">✓</span> Profil, çalışma bilgisi ve tercih ayarları</li>
+        <li><span class="tick">●</span> E-posta doğrulama koduyla şifresiz giriş / kayıt</li>
+        <li><span class="tick">●</span> Misafir modu + istediğin an tam üyeliğe geçiş</li>
+        <li><span class="tick">●</span> Davet bağlantılarıyla üye getirme</li>
+        <li><span class="tick">●</span> Profil, çalışma bilgisi ve tercih ayarları</li>
       </ul>
     </div>
 
-    <!-- Yönetim -->
+    <div class="card">
+      <div class="top">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg></div>
+        <div><h3>Panel &amp; Özet</h3><p class="desc">Giriş yapınca işlerini bir bakışta gördüğün kontrol paneli.</p></div>
+      </div>
+      <ul class="feats">
+        <li><span class="tick">●</span> Kişisel gösterge paneli (dashboard)</li>
+        <li><span class="tick">●</span> İlan görüntülenme sayıları</li>
+        <li><span class="tick">●</span> Aktif hesap seçici (bireysel ↔ kurumsal)</li>
+        <li><span class="tick">●</span> Mobilde anlık bildirimler <em>· mobile</em></li>
+      </ul>
+    </div>
+
     <div class="card">
       <div class="top">
         <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7Z"/><path d="m9 12 2 2 4-4"/></svg></div>
-        <div><h3>Yönetim Paneli</h3><p class="desc">Platformu güvenli ve düzenli tutan yönetici araçları.</p></div>
+        <div><h3>Yönetim Paneli</h3><p class="desc">Platformu güvenli, düzenli ve şeffaf tutan yönetici araçları.</p></div>
       </div>
       <ul class="feats">
-        <li><span class="tick">✓</span> Kurumsal başvuru onayı &amp; içerik moderasyonu</li>
-        <li><span class="tick">✓</span> Kullanım analitiği panosu &amp; ekran logları</li>
-        <li><span class="tick">✓</span> Denetim kayıtları, kullanıcı &amp; hesap yönetimi</li>
-        <li><span class="tick">✓</span> Çok dilli içerik (sektör/ünvan) yönetimi</li>
+        <li><span class="tick">●</span> Kurumsal başvuru onayı &amp; içerik moderasyonu</li>
+        <li><span class="tick">●</span> Şikayet inceleme &amp; karar (ilan/mesaj/profil)</li>
+        <li><span class="tick">●</span> Kullanım analitiği panosu &amp; ekran logları</li>
+        <li><span class="tick">●</span> Denetim kayıtları, kullanıcı &amp; hesap kapatma</li>
+        <li><span class="tick">●</span> Çok dilli içerik (sektör / ünvan) yönetimi</li>
       </ul>
     </div>
 
-    <!-- Altyapı -->
+  </div>
+
+  <div class="sec-h"><h2>Mobil uygulama — iOS &amp; Android</h2><div class="rule"></div></div>
+
+  <div class="mobile-band">
+    <div>
+      <span class="chip native"><span class="dot"></span> Aktif geliştiriliyor</span>
+      <h3>Web'in tamamı cebinde</h3>
+      <p>
+        Metend yalnızca bir web sitesi değil — aynı ticari akışı taşıyan <strong>native iOS ve Android
+        uygulaması</strong> da geliştirme aşamasında. Hedef: web'deki her özelliğin (yönetim paneli hariç)
+        mobilde de olması. Uygulama, mağaza için gerçek kurulum dosyası (APK / IPA) üretecek şekilde
+        yapılandırıldı ve mobile özel yeteneklerle web'in ötesine geçiyor.
+      </p>
+    </div>
+    <div class="mobile-cols">
+      <div>
+        <div class="g">Taşınan modüller</div>
+        <ul class="mini">
+          <li><span class="tick">✓</span> Market, teklif &amp; sipariş</li>
+          <li><span class="tick">✓</span> Katalog &amp; müşteri fiyatları</li>
+          <li><span class="tick">✓</span> Mesajlaşma &amp; moderasyon</li>
+          <li><span class="tick">✓</span> Kurumsal hesaplar &amp; ekip</li>
+          <li><span class="tick">✓</span> Arama, profiller, misafir modu</li>
+        </ul>
+      </div>
+      <div>
+        <div class="g">Mobile özel</div>
+        <ul class="mini">
+          <li><span class="tick">✓</span> Anlık push bildirimleri</li>
+          <li><span class="tick">✓</span> Kamera / galeriden foto yükleme</li>
+          <li><span class="tick">✓</span> Dosya paylaş / indir (PDF)</li>
+          <li><span class="tick">✓</span> Karşılama (onboarding) akışı</li>
+          <li><span class="tick">✓</span> Mağaza derlemesi (APK / IPA)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec-h"><h2>Altyapı &amp; kalite</h2><div class="rule"></div></div>
+  <p class="sec-note">Kullanıcının doğrudan görmediği ama her gün hissettiği sağlamlık — hız, güven ve erişilebilirlik.</p>
+
+  <div class="grid">
+    <div class="card">
+      <div class="top">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+        <div><h3>Uyarlanabilir Tasarım</h3></div>
+      </div>
+      <ul class="feats">
+        <li><span class="tick">●</span> Masaüstü ve mobil için ayrı ayrı optimize arayüz</li>
+        <li><span class="tick">●</span> Akıcı yükleme (iskelet ekranlar), hızlı gezinme</li>
+        <li><span class="tick">●</span> Açık / koyu tema</li>
+      </ul>
+    </div>
     <div class="card">
       <div class="top">
         <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg></div>
-        <div><h3>Altyapı &amp; Kalite</h3><p class="desc">Kullanıcının görmediği ama her gün hissettiği sağlamlık.</p></div>
+        <div><h3>Güvenlik &amp; Gizlilik</h3></div>
       </div>
       <ul class="feats">
-        <li><span class="tick">✓</span> Masaüstü ve mobil için ayrı ayrı optimize tasarım</li>
-        <li><span class="tick">✓</span> Modern güvenlik &amp; gizlilik korumaları</li>
-        <li><span class="tick">✓</span> İki dilli altyapı + arama motoru uyumu (SEO)</li>
-        <li><span class="tick">✓</span> Akıcı yükleme (iskelet ekranlar), hızlı gezinme</li>
+        <li><span class="tick">●</span> Modern güvenlik başlıkları &amp; oturum koruması</li>
+        <li><span class="tick">●</span> Kullanıcı verisi tarayıcıya sızmadan sunucu üzerinden</li>
+        <li><span class="tick">●</span> Rol bazlı yetki (kullanıcı / kurum / yönetici)</li>
       </ul>
     </div>
-
+    <div class="card">
+      <div class="top">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></svg></div>
+        <div><h3>Çok Dil &amp; Bulunabilirlik</h3></div>
+      </div>
+      <ul class="feats">
+        <li><span class="tick">●</span> Türkçe &amp; İngilizce — arayüz ve içerik <em>· yeni</em></li>
+        <li><span class="tick">●</span> Dile göre adres yapısı (/tr, /en)</li>
+        <li><span class="tick">●</span> Arama motoru uyumu (SEO, site haritası)</li>
+      </ul>
+    </div>
   </div>
 
   <div class="sec-h"><h2>Sırada ne var — birlikte karar vereceklerimiz</h2><div class="rule"></div></div>
@@ -320,19 +402,19 @@
   <div class="road">
     <div class="row">
       <div class="when"><span class="chip now"><span class="dot"></span> Şimdi</span></div>
-      <div class="what"><b>Portal içi arama deneyimi</b><p>Giriş yapmış kullanıcı arama yaptığında sonuçların kendi çalışma alanı içinde açılması (şu an dış vitrine yönlendiriyor).</p></div>
+      <div class="what"><b>Portal içi arama deneyimi</b><p>Giriş yapmış kullanıcı arama yaptığında sonuçların kendi çalışma alanı içinde açılması.</p></div>
     </div>
     <div class="row">
       <div class="when"><span class="chip now"><span class="dot"></span> Lansman öncesi</span></div>
       <div class="what"><b>Performans &amp; erişilebilirlik cilası</b><p>Görsellerin hızlandırılması (CDN), sayfa hızı ve erişilebilirlik iyileştirmeleri — <span class="kb">metend.io</span> açılışından önce.</p></div>
     </div>
     <div class="row">
-      <div class="when"><span class="chip plan"><span class="dot"></span> Planlanan</span></div>
-      <div class="what"><b>Bildirimler</b><p>Yeni teklif, mesaj ve sipariş hareketlerinde anlık bilgilendirme.</p></div>
+      <div class="when"><span class="chip now"><span class="dot"></span> Devam ediyor</span></div>
+      <div class="what"><b>Mobil uygulamanın web'e tam paritesi</b><p>Kalan ekranların mobile taşınması ve mağaza (App Store / Google Play) yayınına hazırlık.</p></div>
     </div>
     <div class="row">
       <div class="when"><span class="chip plan"><span class="dot"></span> Planlanan</span></div>
-      <div class="what"><b>Mobil uygulama</b><p>Web'in tüm özelliklerini taşıyan native mobil uygulama (yönetim paneli hariç).</p></div>
+      <div class="what"><b>Web için bildirimler</b><p>Yeni teklif, mesaj ve sipariş hareketlerinde web tarafında da anlık bilgilendirme (mobilde hazır).</p></div>
     </div>
     <div class="row">
       <div class="when"><span class="chip plan"><span class="dot"></span> Hedef</span></div>
@@ -341,7 +423,7 @@
   </div>
 
   <footer>
-    <span>Metend · Ürün Genel Bakış — iç kullanım için hazırlandı</span>
+    <span>Metend · Ürün Genel Bakış — ortakla durum paylaşımı</span>
     <span>Beta canlı: beta.metend.io</span>
   </footer>
 </div>
